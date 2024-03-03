@@ -3,3 +3,5 @@
 /resources/\[local\]/
 /db/
 artifacts/
+.replxx_history
+node_modules
