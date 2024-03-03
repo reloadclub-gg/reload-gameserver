@@ -1,4 +1,5 @@
 local Team = setmetatable({
+    table_name = 'team',
     id = nil,
     match_id = nil,
     name = nil,

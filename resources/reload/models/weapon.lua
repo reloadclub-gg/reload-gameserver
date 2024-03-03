@@ -1,6 +1,4 @@
-local BaseModel = require("base")
-
-local WeaponDamage = setmetatable({
+local WeaponDamage = {
     head_far = nil,
     head_medium = nil,
     head_close = nil,
@@ -10,16 +8,28 @@ local WeaponDamage = setmetatable({
     other_far = nil,
     other_medium = nil,
     other_close = nil,
-}, BaseModel)
-WeaponDamage.__index = WeaponDamage
+}
 
-local Weapon = setmetatable({
-    id = nil,
+function WeaponDamage:new(o)
+    o = o or {}
+    setmetatable(o, self)
+    self.__index = self
+    return o
+end
+
+local Weapon = {
+    sys_name = nil,
     label = nil,
     price = nil,
-    damage = nil
-}, BaseModel)
-Weapon.__index = Weapon
+    damage = nil -- WeaponDamage
+}
+
+function Weapon:new(o)
+    o = o or {}
+    setmetatable(o, self)
+    self.__index = self
+    return o
+end
 
 return {
     Weapon = Weapon,

@@ -1,6 +1,7 @@
 local BaseModel = require("base")
 
 local Player = setmetatable({
+    table_name = 'player',
     id = nil,
     steamid_hex = nil,
     level = nil,
@@ -12,6 +13,7 @@ local Player = setmetatable({
 Player.__index = Player
 
 local PlayerSkin = setmetatable({
+    table_name = 'player_skin',
     player_id = nil,
     name = nil,
     weapon = nil
@@ -19,6 +21,7 @@ local PlayerSkin = setmetatable({
 PlayerSkin.__index = PlayerSkin
 
 local PlayerSpray = setmetatable({
+    table_name = 'player_spray',
     player_id = nil,
     type = nil,
     name = nil
@@ -26,6 +29,7 @@ local PlayerSpray = setmetatable({
 PlayerSpray.__index = PlayerSpray
 
 local PlayerWear = setmetatable({
+    table_name = 'player_wear',
     player_id = nil,
     side = nil,
     name = nil
